@@ -8,7 +8,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd.MM.yy");
-        String secDate = "31.12.21";
+        String firstDate = "31.12.21";
+        String firstDay = String.valueOf(TypeOfDay.FIRSTOFFDAY);
+        String secDate = "15.01.22";
+
 //        Scanner scn = new Scanner(System.in);
         LocalDate time1 = LocalDate.now(); // сегодняшняя дата
         LocalDate time2  = LocalDate.parse(secDate,formatter);
