@@ -1,8 +1,7 @@
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -11,16 +10,18 @@ public class Main {
         System.out.println("Введите дату в формате dd.mm.yyyy");
         String secDate = scn.nextLine();
         scn.close();
-//        System.out.println(getDay("22.03.2022"));
         System.out.println(getDay(secDate));
-
     }
 
     public static String getDay(String secDate) {
         String type;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDate time1 = LocalDate.of(2022, 03, 16);//дата отсчета
-        LocalDate time2 = LocalDate.parse(secDate, formatter);
+        LocalDate time1 = LocalDate.of(2022, 3, 16);//дата отсчета
+        LocalDate time2 = null;
+        try{time2 = LocalDate.parse(secDate, formatter);}
+        catch(DateTimeParseException de){
+            System.out.println("Не верный формат даты");
+        }
         int typeOfDay = 1;
         int days = (int) time1.until(time2, ChronoUnit.DAYS);
         int nums;
