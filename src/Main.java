@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static String getDay(String secDate) {
-        String type = null;
+        String type;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate time1 = LocalDate.of(2022, 03, 16);//дата отсчета
         LocalDate time2 = LocalDate.parse(secDate, formatter);
