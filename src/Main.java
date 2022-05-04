@@ -14,7 +14,6 @@ public class Main {
 //        System.out.println(getDay("22.03.2022"));
         System.out.println(getDay(secDate));
 
-
     }
 
     public static String getDay(String secDate) {
